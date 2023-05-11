@@ -28,7 +28,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () {
+Route::prefix('dashboard')->middleware(['web' ,'auth', 'verified'])->group(function () {
   Route::get('/', [WellcomeController::class, 'index'])->name('Wellcome');
 
   // Route to hero-section
@@ -96,9 +96,9 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
   Route::post('Communication-update', [CommunicationController::class,  'update'])->name('Communication.update');
   //end Route to Communication-section
 
-    //Route to Setting
-    Route::get('settings', [Settingontroller::class,  'index'])->name('settings.index');
-    Route::post('settings-store', [Settingontroller::class,  'store'])->name('settings.store');
-    //end Route to Setting
-  
+  //Route to Setting
+  Route::get('settings', [Settingontroller::class,  'index'])->name('settings.index');
+  Route::post('settings-store', [Settingontroller::class,  'store'])->name('settings.store');
+  //end Route to Setting
+
 });
