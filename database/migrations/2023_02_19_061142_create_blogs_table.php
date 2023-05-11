@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('descripsion');
+            $table->text('descripsion');
             $table->foreignId('category_id')->references('id')->on('categories')->cascadeOnDelete();
             $table->string('coade_use');
             $table->string('photo');

@@ -86,7 +86,7 @@
                                                 </th>
                                                 <th class="align-middle">{{ $items->type }}</th>
                                                 <td class="align-middle">{{ $items->title }}</td>
-                                                <td class="align-middle">{{ $items->descripsion }}</td>
+                                                <td class="align-middle">{{Str::limit($items->descripsion , 50)  }}</td>
                                                 <td class="align-middle">{{ $items->duration }}</td>
                                                 <td class="align-middle">
                                                     <div>
@@ -114,7 +114,7 @@
 
                                     </tbody>
                                 </table>
-                               
+
 
                                 {{-- Insert New Modal --}}
                                 @include('page.backend.Portfolio.modal-include.add')

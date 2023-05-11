@@ -14,17 +14,15 @@
                         <ul class="post-meta">
                             <li class="post-date">
                                 <i class="pe-7s-clock"></i>
-                                {{ date('d-m-Y', strtotime($Blog1->created_at)) }}
+                                {{ !empty($Blog1->created_at) ? date('d-m-Y', strtotime($Blog1->created_at)) : 'none' }}
                             </li>
                             </li>
                             <li class="post-cat">
-                                <a href="#"><i class="pe-7s-folder"></i>{{ $Blog1->category->name }}</a>
+                                <a href="#"><i class="pe-7s-folder"></i>{{ $Blog1->category->name ?? 'none' }}</a>
                             </li>
                         </ul>
                         <h3><a href="#" data-bs-toggle="modal"
-                                data-bs-target="#blogModal1{{ $Blog1->id }}">{{ $Blog1->title }}</a></h3>
-
-
+                                data-bs-target="#blogModal1{{ $Blog1->id }}">{{ $Blog1->title ?? 'none' }}</a></h3>
 
                     </div>
                     <div class="image-wrapper">
@@ -97,12 +95,12 @@
                                             <i class="pe-7s-clock"></i>
                                             {{ date('d-m-Y', strtotime($Blogs->created_at)) }}
                                         </li>
-                                       
+
                                         <li class="post-cat">
                                             <a href="#"><i
                                                     class="pe-7s-folder"></i>{{ $Blogs->category->name }}</a>
                                         </li>
-                                       
+
                                     </ul>
                                     <h3><a href="#" data-bs-toggle="modal"
                                             data-bs-target="#blogModal2{{ $Blogs->id }}">{{ $Blogs->title }}</a>
